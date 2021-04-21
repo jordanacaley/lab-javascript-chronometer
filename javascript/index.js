@@ -14,11 +14,15 @@ let milUni = document.getElementById('milUni');
 let splits = document.getElementById('splits');
 
 function printTime() {
-  // ... your code goes here
+  printMinutes();
+  printSeconds();
+  console.log("seconds:", printSeconds)
+  console.log("minutes:", printMinutes);
 }
 
 function printMinutes() {
-  // ... your code goes here
+  minUni.textContent = "";
+  minDec.textContent = chronometer.twoDigitsNumber(chronometer.getMinutes()); 
 }
 
 function printSeconds() {
@@ -64,7 +68,7 @@ btnLeft.addEventListener('click', () => {
     btnRight.classList.remove("reset");
     btnRight.classList.toggle("split");
     btnRight.textContent = "SPLIT";
-    chronometer.startClick(printSeconds);
+    chronometer.startClick(printTime);
   } else if (btnLeft.classList.contains("stop")) {
     btnLeft.classList.remove("stop");
     btnLeft.classList.toggle("start");
