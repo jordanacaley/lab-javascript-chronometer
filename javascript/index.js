@@ -59,13 +59,19 @@ btnLeft.addEventListener('click', () => {
   if (btnLeft.classList.contains("start")) {
     btnLeft.classList.remove("start");
     btnLeft.classList.toggle("stop");
+    btnLeft.textContent = "STOP";
     btnRight.classList.remove("reset");
     btnRight.classList.toggle("split");
+    btnRight.textContent = "SPLIT";
+    chronometer.startClick();
   } else if (btnLeft.classList.contains("stop")) {
     btnLeft.classList.remove("stop");
     btnLeft.classList.toggle("start");
+    btnLeft.textContent = "START";
     btnRight.classList.remove("split");
     btnRight.classList.toggle("reset");
+    btnRight.textContent = "RESET";
+    chronometer.stopClick();
   }
 });
 

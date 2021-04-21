@@ -33,7 +33,7 @@ class Chronometer {
   resetClick() {
     this.currentTime = 0;
   }
-  
+
   splitClick(minutes, seconds) {
     minutes = this.getMinutes();
     seconds = this.getSeconds();
