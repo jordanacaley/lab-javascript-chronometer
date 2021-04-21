@@ -34,13 +34,14 @@ function printMilliseconds() {
 }
 
 function printSplit() {
-  // ... your code goes here
-  // create li and append to splits
   splits.innerHTML += `<li>${chronometer.splitClick()}</li>`
 }
 
 function clearSplits() {
-  // ... your code goes here
+  splits.innerHTML = '';
+  chronometer.stopClick();
+  chronometer.resetClick();
+  printTime();
 }
 
 function setStopBtn() {
@@ -84,5 +85,7 @@ btnLeft.addEventListener('click', () => {
 btnRight.addEventListener('click', () => {
   if (btnRight.className === "btn split") {
     printSplit();
+  } else {
+    clearSplits();
   }
 });
