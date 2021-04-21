@@ -22,7 +22,8 @@ function printMinutes() {
 }
 
 function printSeconds() {
-  // ... your code goes here
+  secUni.textContent = "";
+  secDec.textContent = chronometer.twoDigitsNumber(chronometer.getSeconds()); 
 }
 
 // ==> BONUS
@@ -63,7 +64,7 @@ btnLeft.addEventListener('click', () => {
     btnRight.classList.remove("reset");
     btnRight.classList.toggle("split");
     btnRight.textContent = "SPLIT";
-    chronometer.startClick();
+    chronometer.startClick(printSeconds);
   } else if (btnLeft.classList.contains("stop")) {
     btnLeft.classList.remove("stop");
     btnLeft.classList.toggle("start");
