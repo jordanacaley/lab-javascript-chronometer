@@ -16,8 +16,6 @@ let splits = document.getElementById('splits');
 function printTime() {
   printMinutes();
   printSeconds();
-  console.log("seconds:", printSeconds)
-  console.log("minutes:", printMinutes);
 }
 
 function printMinutes() {
@@ -37,6 +35,8 @@ function printMilliseconds() {
 
 function printSplit() {
   // ... your code goes here
+  // create li and append to splits
+  splits.innerHTML += `<li>${chronometer.splitClick()}</li>`
 }
 
 function clearSplits() {
@@ -82,5 +82,7 @@ btnLeft.addEventListener('click', () => {
 
 // Reset/Split Button
 btnRight.addEventListener('click', () => {
-  // ... your code goes here
+  if (btnRight.className === "btn split") {
+    printSplit();
+  }
 });
